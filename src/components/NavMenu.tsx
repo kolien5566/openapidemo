@@ -1,46 +1,50 @@
 import React from "react";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
+import { useNavigate, useLocation } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
   {
-    key: "sub1",
-    label: "Navigation One",
-    children: [
-      {
-        key: "g1",
-        label: "Item 1",
-        type: "group",
-        children: [
-          { key: "1", label: "Option 1" },
-          { key: "2", label: "Option 2" },
-        ],
-      },
-      {
-        key: "g2",
-        label: "Item 2",
-        type: "group",
-        children: [
-          { key: "3", label: "Option 3" },
-          { key: "4", label: "Option 4" },
-        ],
-      },
-    ],
+    key: "/",
+    label: "Dashboard",
   },
   {
-    key: "sub2",
-    label: "Navigation Two",
+    key: "workbench",
+    label: "Workbench",
+  },
+  {
+    type: "divider",
+  },
+  {
+    key: "api_reference",
+    label: "API Reference",
     children: [
-      { key: "5", label: "Option 5" },
-      { key: "6", label: "Option 6" },
       {
-        key: "sub3",
-        label: "Submenu",
+        key: "group1",
+        label: "group 1",
+        type: "group",
         children: [
-          { key: "7", label: "Option 7" },
-          { key: "8", label: "Option 8" },
+          { key: "api", label: "Acquire Running Data" },
+          { key: "api2", label: "Send Dispatch Commands" },
+        ],
+      },
+      {
+        key: "group2",
+        label: "group 2",
+        type: "group",
+        children: [
+          { key: "api3", label: "API 3" },
+          { key: "api4", label: "API 4" },
+        ],
+      },
+      {
+        key: "group3",
+        label: "group 3",
+        type: "group",
+        children: [
+          { key: "api6", label: "API 6" },
         ],
       },
     ],
@@ -49,29 +53,59 @@ const items: MenuItem[] = [
     type: "divider",
   },
   {
-    key: "sub4",
-    label: "Navigation Three",
+    key: "dev_docs",
+    label: "Dev Docs",
     children: [
-      { key: "9", label: "Option 9" },
-      { key: "10", label: "Option 10" },
-      { key: "11", label: "Option 11" },
-      { key: "12", label: "Option 12" },
+      { key: "quickstart", label: "Quickstart" },
+      { key: "changelog", label: "Changelog" },
+      { key: "terms&policies", label: "Terms & Policies" },
+      {
+        key: "guides",
+        label: "Guides",
+        type: "group",
+        children: [
+          { key: "csip_implementation", label: "CSIP Implementation" },
+          { key: "vpp_implementation", label: "VPP Implementation" },
+        ],
+      },
     ],
   },
   {
-    key: "grp",
-    label: "Group",
-    type: "group",
+    key: "resources",
+    label: "Resources",
     children: [
-      { key: "13", label: "Option 13" },
-      { key: "14", label: "Option 14" },
+      { key: "projects", label: "Projects" },
+      { key: "devices", label: "Devices" },
+      { key: "members", label: "Members" },
+    ],
+  },
+  {
+    key: "billing",
+    label: "Billing",
+    children: [
+      { key: "balance", label: "Balance" },
+      { key: "pricing", label: "Pricing" },
+      { key: "usage", label: "Usage" },
+      { key: "rate_limit", label: "Rate Limit" },
+    ],
+  },
+  {
+    key: "settings",
+    label: "Settings",
+    children: [
+      { key: "organization_name", label: "Organization Name" },
+      { key: "set_language", label: "Set Language" },
+      { key: "set_password", label: "Set Password" },
     ],
   },
 ];
 
 const NavMenu: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
+    navigate(e.key);
   };
 
   return (
@@ -84,6 +118,7 @@ const NavMenu: React.FC = () => {
       borderRight: 0,
     }}
     items={items}
+    onClick={onClick}
   />
   );
 };
