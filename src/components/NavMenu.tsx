@@ -76,13 +76,15 @@ const NavMenu: React.FC = () => {
 
   return (
     <Menu
-      onClick={onClick}
-      style={{ width: 256 }}
-      defaultSelectedKeys={["1"]}
-      defaultOpenKeys={["sub1"]}
-      mode="inline"
-      items={items}
-    />
+    mode="inline"
+    defaultSelectedKeys={['1']}
+    defaultOpenKeys={['sub1']}
+    style={{
+      height: '100%',
+      borderRight: 0,
+    }}
+    items={items}
+  />
   );
 };
 
