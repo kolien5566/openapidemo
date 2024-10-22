@@ -64,6 +64,7 @@ const items: MenuItem[] = [
         label: "Guides",
         type: "group",
         children: [
+          { key: "return_code", label: "Return Code Description" },
           { key: "csip_implementation", label: "CSIP Implementation" },
           { key: "vpp_implementation", label: "VPP Implementation" },
         ],
@@ -84,6 +85,7 @@ const items: MenuItem[] = [
     label: "Billing",
     children: [
       { key: "balance", label: "Balance" },
+      { key: "billing_history", label: "Billing History" },
       { key: "pricing", label: "Pricing" },
       { key: "usage", label: "Usage" },
       { key: "rate_limit", label: "Rate Limit" },
@@ -93,7 +95,7 @@ const items: MenuItem[] = [
     key: "settings",
     label: "Settings",
     children: [
-      { key: "organization_name", label: "Organization Name" },
+      { key: "organization_name", label: "Set Organization Name" },
       { key: "set_language", label: "Set Language" },
       { key: "set_password", label: "Set Password" },
     ],

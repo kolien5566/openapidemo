@@ -9,14 +9,15 @@ import Api from './pages/api.tsx';
 import Quickstart from './pages/dev_docs/quickstart.tsx';
 import Changelog from './pages/dev_docs/changelog.tsx';
 import Terms from './pages/dev_docs/terms&policies.tsx';
-import ErrorCode from './pages/dev_docs/error_code.tsx';
+import ReturnCode from './pages/dev_docs/return_code.tsx';
 import CSIP from './pages/dev_docs/csip_implementation.tsx';
-import VPP from './pages/dev_docs/csip_implementation.tsx';
+import VPP from './pages/dev_docs/vpp_implementation.tsx';
 import Projects from './pages/resources/projects.tsx';
 import Devices from './pages/resources/devices.tsx';
 import Members from './pages/resources/members.tsx';
 import Balance from './pages/billing/balance.tsx';
 import Pricing from './pages/billing/pricing.tsx';
+import BillingHistory from './pages/billing/billing_history.tsx';
 import Uasge from './pages/billing/usage.tsx';
 import RateLimit from './pages/billing/rate_limit.tsx';
 import OrganizationName from './pages/settings/organization_name.tsx';
@@ -38,10 +39,11 @@ const App = () => {
         />
         <Layout>
         <Sider
-            width={248}
+            width={250}
             style={{
               background: colorBgContainer,
               overflow: 'auto',
+              marginTop: 64,
               height: 'calc(100vh - 64px)', // 假设 NavHeader 高度为 64px
               position: 'fixed',
               left: 0,
@@ -52,7 +54,7 @@ const App = () => {
           </Sider>
           <Layout
             style={{
-              padding: '24px',
+              padding: '84px 20px 10px 270px',
             }}
           >
             <Content
@@ -65,20 +67,20 @@ const App = () => {
                 <Route path="/quickstart" element={<Quickstart />} />
                 <Route path="/changelog" element={<Changelog />} />
                 <Route path="/terms&policies" element={<Terms />} />
-                <Route path="/error_code" element={<ErrorCode />} />
+                <Route path="/return_code" element={<ReturnCode />} />
                 <Route path="/csip_implementation" element={<CSIP />} />
                 <Route path="/vpp_implementation" element={<VPP />} />
                 {/* resources */}
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/devices" element={<Devices />} />
-                <Route path="//members" element={<Members />} />
+                <Route path="/members" element={<Members />} />
                 {/* billing */}
                 <Route path="/balance" element={<Balance />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/usage" element={<Uasge />} />
                 <Route path="/rate_limit" element={<RateLimit />} />
                 {/* settings */}
-                <Route path="/organization" element={<OrganizationName />} />
+                <Route path="/organization_name" element={<OrganizationName />} />
                 <Route path="/set_language" element={<SetLanguage />} />
                 <Route path="/set_password" element={<SetPassword />} />
 
