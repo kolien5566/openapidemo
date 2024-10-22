@@ -75,7 +75,7 @@ const items: MenuItem[] = [
     key: "resources",
     label: "Resources",
     children: [
-      { key: "projects", label: "Projects" },
+      { key: "applications", label: "Applications" },
       { key: "devices", label: "Devices" },
       { key: "members", label: "Members" },
     ],

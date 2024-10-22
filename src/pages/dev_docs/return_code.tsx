@@ -1,7 +1,7 @@
 import React from "react";
 import { Table } from "antd";
 
-const ReturnCodeTable = () => {
+const App = () => {
   const columns = [
     {
       title: "Return Code",
@@ -86,4 +86,4 @@ const ReturnCodeTable = () => {
     </>
   );
 };
-export default ReturnCodeTable;
+export default App;

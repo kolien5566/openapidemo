@@ -12,9 +12,9 @@ import Terms from './pages/dev_docs/terms&policies.tsx';
 import ReturnCode from './pages/dev_docs/return_code.tsx';
 import CSIP from './pages/dev_docs/csip_implementation.tsx';
 import VPP from './pages/dev_docs/vpp_implementation.tsx';
-import Projects from './pages/resources/projects.tsx';
-import Devices from './pages/resources/devices.tsx';
-import Members from './pages/resources/members.tsx';
+import Applications from './pages/resources/applications/applications.tsx';
+import Devices from './pages/resources/devices/devices.tsx';
+import Members from './pages/resources/members/members.tsx';
 import Balance from './pages/billing/balance.tsx';
 import Pricing from './pages/billing/pricing.tsx';
 import BillingHistory from './pages/billing/billing_history.tsx';
@@ -71,7 +71,7 @@ const App = () => {
                 <Route path="/csip_implementation" element={<CSIP />} />
                 <Route path="/vpp_implementation" element={<VPP />} />
                 {/* resources */}
-                <Route path="/projects" element={<Projects />} />
+                <Route path="/applications" element={<Applications />} />
                 <Route path="/devices" element={<Devices />} />
                 <Route path="/members" element={<Members />} />
                 {/* billing */}
