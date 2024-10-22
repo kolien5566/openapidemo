@@ -76,6 +76,7 @@ const App = () => {
                 <Route path="/members" element={<Members />} />
                 {/* billing */}
                 <Route path="/balance" element={<Balance />} />
+                <Route path="/billing_history" element={<BillingHistory />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/usage" element={<Uasge />} />
                 <Route path="/rate_limit" element={<RateLimit />} />
